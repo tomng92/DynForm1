@@ -1,15 +1,30 @@
 <div>
 
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+    <!-- list des champs ... misnomer: pas de question -->
     <div *ngFor="let question of questions" class="form-row">
       <df-question [question]="question" [form]="form"></df-question>
+      <br>
     </div>
+
+
+      <!--<counter-input [formControlName]="asdf" [id]="mycounter" [type]="text"-->
+                     <!--[counterValue]="234"></counter-input>-->
+
+    <br>
+
+    <!-- soumission -->
     <div class="form-row">
-      <button type="submit" [disabled]="!form.valid">Save</button>
+      <button type="submit" [disabled]="!form.valid">SAUVER!</button>
     </div>
   </form>
-  
+
+
+      <br>
+
+  <!-- output -->
   <div *ngIf="payLoad" class="form-row">
-    <strong>Saved the following values</strong><br>{{payLoad}}
+    <strong>Ces valeurs sont sauvées: </strong><br>{{payLoad}}
   </div>
 </div>
